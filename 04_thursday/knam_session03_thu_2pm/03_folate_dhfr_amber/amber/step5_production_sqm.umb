@@ -1,0 +1,7 @@
+ &rst
+  iat=2652,2682,2682,2567,
+  rstwt=1.,-1.,
+  r1=-99, r2=${mdrc}, r3=${mdrc}, r4=99,
+  rk2=${mdkumb}, rk3=${mdkumb},
+ &end
+ 

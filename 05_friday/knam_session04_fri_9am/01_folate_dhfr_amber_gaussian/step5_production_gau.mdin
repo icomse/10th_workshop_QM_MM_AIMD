@@ -1,0 +1,76 @@
+A NVT simulation for common production-level simulations
+ &cntrl
+    imin=0,          ! No minimization
+    irest=${mdqrst}, ! This IS a restart of an old MD simulation
+    ntx=5,           ! So our inpcrd file has velocities
+
+    ! Temperature control
+    ntt=3,         ! Langevin dynamics
+    gamma_ln=1.0,  ! Friction coefficient (ps^-1)
+    temp0=300,     ! Target temperature
+
+    ! Potential energy control
+    cut=9.0,       ! nonbonded cutoff, in Angstroms
+
+    ! MD settings
+    nstlim=5000, ! 5 ps total
+    dt=0.001,      ! time step (ps)
+
+    ! SHAKE
+    ntc=2,         ! Constrain bonds containing hydrogen
+    ntf=2,         ! Do not calculate forces of bonds containing hydrogen
+
+    ! Control how often information is printed
+    ntpr=10,      ! Print energies every 100 steps
+    ntwx=10,      ! Print coordinates every 100 steps to the trajectory
+    ntwr=10,      ! Print a restart file every 5K steps (can be less frequent)
+!   ntwv=-1,       ! Uncomment to also print velocities to trajectory
+!   ntwf=-1,       ! Uncomment to also print forces to trajectory
+    ntxo=2,        ! Write NetCDF format
+    ioutfm=1,      ! Write NetCDF format (always do this!)
+
+    ! Wrap coordinates when printing them to the same unit cell
+    iwrap=1,
+
+    ! Set water atom/residue names for SETTLE recognition
+    watnam='WAT',  ! Water residues are named WAT
+    owtnm='O',     ! Water oxygens are named O
+
+    ifqnt=1,       ! Switch on QM/MM coupled potential
+  
+    ! Restraints
+    nmropt=1,      ! Turn on restraints
+
+ /
+
+ &qmmm
+  ! qmatoms selection can also be done with 'qmmask' or iqmatoms
+  ! qmmask=':753' ! means residue 753 should be treated as qmatoms
+  ! qmmask = '@*' ! make all QM
+  ! to know more refer 'Amber Masks' in the manual
+  iqmatoms=2559, 2560, 2561, 2562, 2563, 2564, 2565, 2566, 2567, 2568, 2569, 2570, 2571, 2572, 2573, 2574, 2575, 2576, 2577, 2578, 2579, 2580, 2581, 2591, 2592, 2593, 2594, 2595, 2596, 2597, 2598, 2599, 2600, 2601, 2602, 2603, 2604, 2605, 2639, 2640, 2641, 2642, 2643, 2644, 2645, 2646, 2647, 2648, 2649, 2650, 2651, 2652, 2653, 2654, 2672, 2673, 2674, 2675, 2676, 2677, 2678, 2679, 2680, 2681, 2682, 2683, 2684, 
+  qmcharge=1,           ! charge on QM region (default = 0)
+  spin=1,               ! spin multiplicity of QM region (default = 1)             
+  qm_theory = 'EXTERN', ! use external QM program
+  qmcut = 12            ! Limitation: cutoff (qmcut variable in the &qmmm namelist) can be set to a number that is larger than the simulated system, thus effectively not applying a cutoff. This is recommended
+  qmshake=0,
+  qm_ewald = 0,         ! non periodic system
+ /
+
+ &gau
+  method = 'HF',
+  basis = '6-31G',
+  scf_conv=8,
+  use_template=0,
+  num_threads = 8,
+  mem='8GB',
+ /
+ 
+ &wt type='DUMPFREQ', istep1=10 /
+ &wt type='END' /
+ 
+ DISANG=step5_gau_rc_${mdrc}.umb
+ DUMPAVE=rstcv_win_${mdwin}_cnt_${mdcnt}_rc_${mdrc}_k_${mdkumb}_amber_gau.cv
+
+ 
+

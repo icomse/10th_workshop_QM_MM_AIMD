@@ -1,0 +1,67 @@
+A NVT simulation for common production-level simulations
+ &cntrl
+    imin=0,        ! No minimization
+    irest=1,       ! This IS a restart of an old MD simulation
+    ntx=5,         ! So our inpcrd file has velocities
+
+    ! Temperature control
+    ntt=3,         ! Langevin dynamics
+    gamma_ln=1.0,  ! Friction coefficient (ps^-1)
+    temp0=300,   ! Target temperature
+
+    ! Potential energy control
+    cut=12.0,      ! nonbonded cutoff, in Angstroms
+    fswitch=10.0,  ! Force-based switching
+
+    ! MD settings
+    nstlim=5000,   ! 5 ps total
+    dt=0.001,      ! time step (ps)
+
+    ! SHAKE
+    ntc=2,         ! Constrain bonds containing hydrogen
+    ntf=2,         ! Do not calculate forces of bonds containing hydrogen
+
+    ! Control how often information is printed
+    ntpr=100,      ! Print energies every 100 steps
+    ntwx=100,      ! Print coordinates every 100 steps to the trajectory
+    ntwr=10,       ! Print a restart file every 10 steps (can be less frequent)
+!   ntwv=-1,       ! Uncomment to also print velocities to trajectory
+!   ntwf=-1,       ! Uncomment to also print forces to trajectory
+    ntxo=2,        ! Write NetCDF format
+    ioutfm=1,      ! Write NetCDF format (always do this!)
+
+    ! Wrap coordinates when printing them to the same unit cell
+    iwrap=1,
+
+    ! Set water atom/residue names for SETTLE recognition
+    watnam='WAT',  ! Water residues are named WAT
+    owtnm='O',     ! Water oxygens are named O
+
+    ifqnt=1,       ! Switch on QM/MM coupled potential
+    ! Restraints
+    nmropt=1,      ! Turn on restraints
+    ntr=1,
+    restraint_wt=2.0,
+    restraintmask=':65-66 & !@65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,178,179,180,181,182,183,184,185,186,187,188,189,190',
+ /
+
+ &ewald
+    vdwmeth = 0,
+ /
+
+ &qmmm
+  iqmatoms=65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 
+  qmcharge=1,
+  qm_theory='DFTB3',
+  qmcut=12.0,
+  qmshake=0,
+  dftb_slko_path='/home/raafik/datahdd/00_icomse_test/02-2-folate-dhfr-amber-dftb/charmm-gui-4976734812/amber/parameters/3ob-3-1',
+
+  adjust_q=1
+ /
+ 
+ &wt type='DUMPFREQ', istep1=10 /
+ &wt type='END' /
+ 
+ DISANG=step5_dftb_rc_${mdrc}.umb
+ DUMPAVE=rstcv_win_${mdwin}_cnt_${mdcnt}_rc_${mdrc}_k_${mdkumb}_amber_dftb.cv
