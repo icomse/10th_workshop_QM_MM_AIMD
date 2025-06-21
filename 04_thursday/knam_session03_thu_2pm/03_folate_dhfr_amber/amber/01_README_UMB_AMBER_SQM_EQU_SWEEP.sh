@@ -13,18 +13,19 @@
 # If you are willing to use "sander" for your simulation, please remove "&end" line in all minimization / equilibration
 # inputs.
 
-# Activate your conda environment
+# If a fresh install based on the instructions in the README.md file, you can run the following commands to set up the environment.
 #eval "$(/scratch/<your_username>/icomse_knam_session/miniconda3/bin/conda shell.bash hook)"
 #conda activate
 #source /usr/local/miniforge3/activate_conda_env.sh
 #conda activate knamsessionenv
 #source $CONDA_PREFIX/amber.sh
 
-module load openmpi-5.0.5
-source /path/to/amber.sh
+# ICOMSE on PSC: Set up environment variables for everything to work properly
+# prior : bash /ocean/projects/see220002p/shared/setupS25.sh 
+source ~/.bash_profile
 
 # Set executable
-amber="mpirun -np 12 sander.MPI"
+amber="mpirun -np 8 sander.MPI"
 
 # Set input/output filenames
 init="step3_input"

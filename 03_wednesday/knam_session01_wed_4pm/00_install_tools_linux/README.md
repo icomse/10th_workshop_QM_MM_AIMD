@@ -143,15 +143,16 @@ sqm
 /scratch/axa5186/icomse_knam_session/charmm/c49b2_dftb/bin/charmm
 ```
 ---
-### 2.5. INSTALL WHAM
+### 2.5. INSTALL GROSSFIELD WHAM
 
 ```bash
-cd icomse_knam_session
+cd icomse_knam_session # Change to the session directory
 wget http://membrane.urmc.rochester.edu/sites/default/files/wham/wham-release-2.1.0.tgz
-tar -xvzf wham-release-2.1.0.tgz
-cd wham-release-2.1.0
-mkdir build
-cd build
-cmake ..
-cmake --build
+tar -xvf wham-release-2.1.0.tgz
+cd wham
+mkdir build_dir
+mkdir install_dir
+cd build_dir
+cmake .. -DCMAKE_INSTALL_PREFIX=../install_dir
+make install
 ```

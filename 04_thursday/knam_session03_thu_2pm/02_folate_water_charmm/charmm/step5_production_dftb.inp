@@ -2,7 +2,7 @@
 * INPUT FILE FOR NVT DYNAMICS OF SOLVATED GLOBULAR PROTEIN
 *
 
-DIMENS CHSIZE 5000000 MAXRES 3000000
+DIMENS CHSIZE 500000 MAXRES 300000
 
 ! Read topology and parameter files
 stream toppar.str
@@ -106,7 +106,7 @@ stream qm_region.str
 faster 2
 shake bonh sele .not. ( QMS .or. type QQH* ) end param fast
 cons harm clear
-cons harm force 2.0 select ( ( segi HETD .or. segi HETB ) .and. ( .not. ( QMS .or. type QQH* ) ) end
+cons harm force 5.0 select ( ( segi HETD .or. segi HETB ) .and. ( .not. ( QMS .or. type QQH* ) ) ) end
 
 update imal imgf -1
 scalar WMAIN set 1.0 sele QMS .and. type N*  show end
