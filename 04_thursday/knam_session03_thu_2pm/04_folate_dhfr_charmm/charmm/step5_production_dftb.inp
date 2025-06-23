@@ -132,7 +132,7 @@ if @{mdqrst} .eq. 0 then
    close unit 10
 
    ! Short minimization
-   mini abnr nstep 100
+   mini abnr nstep 50
 
    open write unit 10 card name @{mdistep}_mini.pdb
    write coor unit 10 pdb

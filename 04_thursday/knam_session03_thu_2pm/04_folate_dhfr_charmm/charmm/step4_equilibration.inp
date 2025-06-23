@@ -75,7 +75,7 @@ mini ABNR nstep 50 nprint 5
 ! However, it might be possible to increase it to 2 fs in most applications.
 !
 
-set nstep = 125000
+set nstep = 50000
 set temp = 300
 
 shake bonh param fast
