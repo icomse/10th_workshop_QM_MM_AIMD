@@ -117,7 +117,7 @@ make install # make -j4 install, if you have multiple cores available
 # c49b2_dftb,  CHARMM with dftb
 #-----------------------------------
 rm -rf *  # remove any previous build files in build_charmm
-sed -i '380s/ || KEY_SCCDFTB==1//' ../source/nbonds/pme.F90
+sed -i '380s/ || KEY_SCCDFTB==1//' ../source/nbonds/pme.F90 #this is a reported bug, not yet reflected in current release
 ../configure -p ../c49b2_dftb --with-gnu --with-sccdftb --without-mkl --without-openmm --without-qchem --without-quantum --without-colfft --without-cuda --without-opencl
 make install # make -j4 install, if you have multiple cores available
 ```

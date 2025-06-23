@@ -22,7 +22,7 @@
 
 # ICOMSE on PSC: Set up environment variables for everything to work properly
 # prior : bash /ocean/projects/see220002p/shared/setupS25.sh 
-source ~/.bash_profile
+# source ~/.bash_profile
 
 # Set executable
 amber="mpirun -np 8 sander.MPI"
