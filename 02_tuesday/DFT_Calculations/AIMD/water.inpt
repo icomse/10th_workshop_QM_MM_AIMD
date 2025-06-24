@@ -16,7 +16,7 @@ MESH_SPACING: 0.35
                 
 KPOINT_GRID: 1 1 1      
 
-TOL_SCF: 1e-4                 # density/potential relative residual convergence (unitless)
+TOL_SCF: 1e-5                 # density/potential relative residual convergence (unitless)
 
 
 # MD ##############################################
@@ -26,13 +26,9 @@ ION_TEMP_END: 325             # kelvin: vary temp linearly from ION_TEMP to ION_
       
 MD_METHOD: NVK_G              # NVE, NVT_NH (Nose-Hoover), NVK_G (Gaussian)
 #QMASS: 10                     # mass for NH thermostat (au): default ~1654
+
 MD_TIMESTEP: 0.5              # fs
 MD_NSTEP: 10                   # run MD_NSTEP steps or TWTIME minutes, whichever comes first
-#ION_VEL_DSTR: 1               # initial velocity distrib: 1= uniform, 2= Maxwell-Boltzmann (default)
-#ION_VEL_DSTR_RAND: 0          # initial velocity distrib seed: 0= fixed (default), 1= random
-#PRINT_RESTART: 1              # output .restart files for restarting
-##PRINT_RESTART_FQ: 3           # .restart files output every PRINT_RESTART_FQ steps
-RESTART_FLAG: 1               # 1= restart MD from .restart file if present, 0= start new
 
 # outputs #########################################
 #CALC_PRES: 1
