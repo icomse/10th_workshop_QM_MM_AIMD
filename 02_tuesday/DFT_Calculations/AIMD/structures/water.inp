@@ -1,0 +1,27 @@
+#
+# A mixture of water and urea
+#
+
+# All the atoms from diferent molecules will be separated at least 2.0
+# Anstroms at the solution.
+
+tolerance 2.0
+
+# The file type of input and output files is PDB
+
+filetype pdb
+
+# The name of the output file
+
+output water_large.pdb
+
+# 4 water molecules and 400 urea molecules will be put in a box
+# defined by the minimum coordinates x, y and z = 0. 0. 0. and maximum
+# coordinates 4.9308 4.9308 4.9308 That is, they will be put in a cube of side
+# 40. (the keyword "inside cube 0. 0. 0. 4.9308") could be used as well.
+
+structure water.pdb 
+  number 4 
+  inside box 0. 0. 0. 4.9308 4.9308 4.9308
+end structure
+

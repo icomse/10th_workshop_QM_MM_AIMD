@@ -1,0 +1,32 @@
+# All units are a.u.
+
+# Lattice vector, LV = [a; b; c]
+LATVEC:
+7.6534065 0 0
+0 7.6534065 0
+0 0 7.6534065
+
+# Lattice vector scaling factor 
+LATVEC_SCALE: 1 1 1
+
+# Spacing between two grid points (in bohr)
+MESH_SPACING: 0.35
+
+# K-point mesh
+KPOINT_GRID: 3 3 3
+
+# Boundary condition
+BC: P P P
+
+# Exchange-correlation type
+EXCHANGE_CORRELATION: GGA_PBE
+
+# Electronic temperature/smearing in Kelvin
+# 0.001 Ha = 315.775 Kelvin
+SMEARING: 0.0073450
+
+# Stopping criteria
+TOL_SCF: 1e-4
+
+# Uncomment the following lines to perform a relaxation
+# RELAX_FLAG: 1

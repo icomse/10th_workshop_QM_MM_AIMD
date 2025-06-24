@@ -1,0 +1,18 @@
+HEADER 
+TITLE     Built with Packmol                                             
+REMARK   Packmol generated pdb file 
+REMARK   Home-Page: http://m3g.iqm.unicamp.br/packmol
+REMARK
+ATOM      1  OH  OSP3A   1       2.613   3.623   2.653  1.00  0.00              
+ATOM      2 1HH  OSP3A   1       2.826   3.678   3.588  1.00  0.00              
+ATOM      3 2HH  OSP3A   1       2.914   4.419   2.209  1.00  0.00              
+ATOM      4  OH  OSP3A   2       1.036   0.784   0.352  1.00  0.00              
+ATOM      5 1HH  OSP3A   2       0.133   0.483   0.221  1.00  0.00              
+ATOM      6 2HH  OSP3A   2       1.507   0.154   0.902  1.00  0.00              
+ATOM      7  OH  OSP3A   3       0.476   3.806   0.824  1.00  0.00              
+ATOM      8 1HH  OSP3A   3       0.780   4.532   0.275  1.00  0.00              
+ATOM      9 2HH  OSP3A   3       0.416   4.098   1.737  1.00  0.00              
+ATOM     10  OH  OSP3A   4       3.326   3.103   0.424  1.00  0.00              
+ATOM     11 1HH  OSP3A   4       3.037   3.953   0.083  1.00  0.00              
+ATOM     12 2HH  OSP3A   4       2.567   2.524   0.525  1.00  0.00              
+END
