@@ -105,8 +105,6 @@ set qmpackage = sccdftb
 stream qm_region.str
 faster 2
 shake bonh sele .not. ( QMS .or. type QQH* ) end param fast
-cons harm clear
-cons harm force 5.0 select ( ( segi HETD .or. segi HETB ) .and. ( .not. ( QMS .or. type QQH* ) ) ) end
 
 update imal imgf -1
 scalar WMAIN set 1.0 sele QMS .and. type N*  show end

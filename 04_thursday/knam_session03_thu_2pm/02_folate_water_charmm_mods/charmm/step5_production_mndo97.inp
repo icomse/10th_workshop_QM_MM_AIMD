@@ -104,8 +104,7 @@ set qmpackage = mndo97
 stream qm_region.str
 faster 2
 shake bonh sele .not. ( QMS .or. type QQH* ) end param fast
-cons harm clear
-cons harm force 5.0 select ( ( segi HETD .or. segi HETB ) .and. ( .not. ( QMS .or. type QQH* ) ) ) end
+
 
 ! below "remove" command is to remove the force field/MM energies within qm regions,
 ! since we use qm for the interactions and energies for qm atom pairs.
