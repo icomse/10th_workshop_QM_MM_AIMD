@@ -6,6 +6,9 @@
 - **3. MD SIMULATION: CHARMM and AMBER**
   - www.charmm.org
   - www.ambermd.org
+  - CHARMM learning resources: 
+    - https://charmm-gui.org/?doc=lecture
+    - https://forums-academiccharmm.org/
 - **4. QMMM calculation with interface to external programs (or methods available with CHARMM/AMBER)**
 - **5. UMBRELLA SAMPLING along the defined reaction-coordinate**
 - **6. WHAM analysis to obtain free energy profile**
