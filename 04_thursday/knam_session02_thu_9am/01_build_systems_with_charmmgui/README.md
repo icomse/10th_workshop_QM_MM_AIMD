@@ -1,6 +1,6 @@
 # Instructions to setup Folate-NADPH complex in aqueous and dihydrofolate reductase (DHFR) enzyme environments for CHARMM and AMBER
 ### A detailed video tutorial is available on [YouTube](https://youtu.be/l7_cTXSQWbM?si=oat6tPy21RXYJZ3a).   
-#### Four systems to be built fro DFTB calculations, the we can modify the inputs for AM1 and Gaussan calculations, we will stick with CHARMM36m forcefield for MM part for all cases:
+#### Four systems to be built fro DFTB calculations, the we can modify the inputs for AM1 and Gaussan calculations, we will stick with CHARMM36m forcefield for MM part for all cases: (rename the charmm-gui generated tar file to avoid confusion)
 - **Folate-NADPH complex in aqueous environment for CHARMM**
 - **Folate-NADPH complex in dhfr environment for CHARMM**
 

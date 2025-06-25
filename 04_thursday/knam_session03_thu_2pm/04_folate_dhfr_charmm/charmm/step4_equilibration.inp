@@ -61,8 +61,8 @@ cons harm force 5.0 sele QMS end
 cons harm force 1.0 sele BB .and. .not. QMS end
 cons harm force 0.1 sele SC .and. .not. QMS end
 
-mini SD   nstep 50 nprint 5
-mini ABNR nstep 50 nprint 5
+mini SD   nstep 20 nprint 5
+mini ABNR nstep 20 nprint 5
 
 !
 ! NVT dynamics,
@@ -75,7 +75,7 @@ mini ABNR nstep 50 nprint 5
 ! However, it might be possible to increase it to 2 fs in most applications.
 !
 
-set nstep = 50000
+set nstep = 100
 set temp = 300
 
 shake bonh param fast
@@ -83,7 +83,7 @@ shake bonh param fast
 open write unit 12 card name step4_equilibration.rst
 
 DYNA VVER start timestep 0.001 nstep @nstep -
-     nprint 1000 iprfrq 1000 ntrfrq 1000 -
+     nprint 10 iprfrq 100 ntrfrq 100 -
      iunread -1 iunwri 12 iuncrd -1 iunvel -1 kunit -1 -
      nsavc 0 nsavv 0 -
      nose rstn tref @temp qref 50 ncyc 10 firstt @temp

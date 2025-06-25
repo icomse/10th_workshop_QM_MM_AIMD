@@ -159,7 +159,7 @@ open write unit 12 card name @{mdistep}.rst
 open write unit 13 file name @{mdistep}.dcd
 
 dynamics leap cpt @{mdst} -
-         nstep 5000 timestep 0.001 -
+         nstep @{mdnstepp} timestep 0.001 -
          iunrea @{iread} iunwri 12 iuncrd 13 iunvel -1 kunit -1 -
          nprint 10 nsavc 10 isvfrq 10 ntrf 10 ixtfrq 10 iprfrq 10 -
          firstt @temp finalt @temp tstruc @temp -

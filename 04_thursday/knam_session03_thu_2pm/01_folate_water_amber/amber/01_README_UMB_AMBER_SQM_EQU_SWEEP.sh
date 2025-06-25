@@ -25,7 +25,7 @@
 # source ~/.bash_profile
 
 # Set executable
-amber="mpirun -np 8 sander.MPI"
+amber="mpirun -np 1 sander.MPI"
 
 # Set input/output filenames
 init="step3_input"
