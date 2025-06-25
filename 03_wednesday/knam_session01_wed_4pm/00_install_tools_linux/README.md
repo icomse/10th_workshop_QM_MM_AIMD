@@ -1,4 +1,4 @@
-# HAND-ON SESSION: AGENDA
+#  AGENDA
 - **1. Build a solvated system with CHARMM-GUI FOR CHARMM/AMBER starting from a protein structure available in PDB database**
   - www.charmm-gui.org 
 - **2. VIEW/INSPECT the structure with VMD/PYMOL/CHIMERA...**
