@@ -16,16 +16,17 @@
 
 ATOM_TYPE: Si              # atom type followed with valence charge
 ATOMIC_MASS: 28.0855       # atomic mass (amu)
-PSEUDO_POT: /opt/sparc/2.0.0_20250611/conda/share/sparc/psps/14_Si_4_1.9_1.9_pbe_n_v1.0.psp8
+PSEUDO_POT: ...PATH.../sparc/psps/14_Si_4_1.9_1.9_pbe_n_v1.0.psp8
 N_TYPE_ATOM: 2               # number of atoms of this type
 # COORD:                      # Cartesian coordinates (au)
 COORD_FRAC:                   # fractional coordinates (in lattice vector basis)
    0.3333330000      0.6666670000      0.0000000000
    0.6666670000      0.3333330000      0.5000000000
 
-ATOM_TYPE: C                              # atom type 
+ATOM_TYPE: C                     # atom type 
+ATOMIC_MASS: 12.011              # atomic mass (amu)
 N_TYPE_ATOM: 2                              # number of atoms of this type
-PSEUDO_POT: /opt/sparc/2.0.0_20250611/conda/share/sparc/psps/06_C_4_1.2_1.2_pbe_n_v1.0.psp8
+PSEUDO_POT: ...PATH.../sparc/psps/06_C_4_1.2_1.2_pbe_n_v1.0.psp8
 COORD_FRAC:                                      # coordinates follows
     0.3333330000      0.6666670000      0.3850000000
     0.6666670000      0.3333330000      0.8850000000
