@@ -1,0 +1,20 @@
+* QM region
+*
+
+define QMS sele (atom HETB 1 N1 .or. atom HETB 1 C1 .or. atom HETB 1 N2 .or. atom HETB 1 N3 .or. -
+                atom HETB 1 C2 .or. atom HETB 1 O1 .or. atom HETB 1 C3 .or. atom HETB 1 N4 .or. -
+                atom HETB 1 C4 .or. atom HETB 1 C5 .or. atom HETB 1 N5 .or. atom HETB 1 C6 .or. -
+                atom HETB 1 C7 .or. atom HETB 1 N6 .or. atom HETB 1 C8 .or. atom HETB 1 C9 .or. -
+                atom HETB 1 C10 .or. atom HETB 1 C11 .or. atom HETB 1 C12 .or. atom HETB 1 C13 .or. -
+                atom HETB 1 C14 .or. atom HETB 1 O2 .or. atom HETB 1 N7 .or. atom HETB 1 H1 .or. -
+                atom HETB 1 H2 .or. atom HETB 1 H3 .or. atom HETB 1 H4 .or. atom HETB 1 H5 .or. -
+                atom HETB 1 H6 .or. atom HETB 1 H7 .or. atom HETB 1 H8 .or. atom HETB 1 H9 .or. -
+                atom HETB 1 H10 .or. atom HETB 1 H11 .or. atom HETB 1 H12 .or. atom HETB 1 H13 .or. -
+                atom HETB 1 H14 .or. atom HETB 1 H15 .or. atom HETD 1 C12 .or. atom HETD 1 O11 .or. -
+                atom HETD 1 C13 .or. atom HETD 1 O12 .or. atom HETD 1 C14 .or. atom HETD 1 O13 .or. -
+                atom HETD 1 C15 .or. atom HETD 1 N6 .or. atom HETD 1 C16 .or. atom HETD 1 C17 .or. -
+                atom HETD 1 C18 .or. atom HETD 1 O14 .or. atom HETD 1 N7 .or. atom HETD 1 C19 .or. -
+                atom HETD 1 C20 .or. atom HETD 1 C21 .or. atom HETD 1 H14 .or. atom HETD 1 H15 .or. -
+                atom HETD 1 H16 .or. atom HETD 1 H17 .or. atom HETD 1 H18 .or. atom HETD 1 H19 .or. -
+                atom HETD 1 H20 .or. atom HETD 1 H21 .or. atom HETD 1 H22 .or. atom HETD 1 H23 .or. -
+                atom HETD 1 H24 .or. atom HETD 1 H25 .or. atom HETD 1 H26) end

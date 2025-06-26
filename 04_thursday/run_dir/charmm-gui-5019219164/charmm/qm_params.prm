@@ -1,0 +1,19 @@
+* QM params
+*
+
+ATOMS
+MASS -1 QQH 1.00800 ! QM-link
+
+BONDS
+QQH NG2S1 0.000 1.0
+QQH CG311 0.000 1.0
+QQH CG3C51 0.000 1.0
+QQH CG321 0.000 1.0
+
+ANGLES
+QQH NG2S1 CG311 0.0000 0.0000
+QQH CG3C51 CG321 0.0000 0.0000
+
+NONBONDED nbxmod  5 atom cdiel fshift vatom vdistance vfswitch -
+cutnb 14.0 ctofnb 12.0 ctonnb 10.0 eps 1.0 e14fac 1.0 wmin 1.5
+QQH    0.000000  0.000000      0.000000 ! QM-link atom

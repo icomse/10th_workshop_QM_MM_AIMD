@@ -1,0 +1,54 @@
+* sodium and chloride addition; @ICL CL- @INA NA+ MIN DIST @MND
+* excluding @SOL
+*
+
+! sol   particles to exclude; atom selection w/o SELE and END
+! icl   no. of chlorides
+! ina   no. of sodiums
+! mnd   min distance to another solute particle
+
+if icl .le. 0 goto genk
+! INITIALIZE CHLORIDES; COORDS SET 0,0,0
+read sequ cla @ICL
+generate cla noang nodihe first none last none
+coor set xdir 0.0 ydir 0.0 zdir 0.0 sele segid cl end
+
+! PICK A WATER MOLECULE AND REPLACE IT WITH A CHLORIDE ION
+set k 1
+label ilp
+define xcld sele ( @SOL ) .or. segid CL end ! EXCLUDED SEGMENTS
+define prox sele xcld .around. @MND end ! NEARBY EXCLUDED ATOMS
+define list sele segid SOLV .and. .not. prox end ! WATERS NOT NEARBY
+calc in int( ?RAND * ?NSEL ) ! RANDOM INTEGER, BASED ON WATER COUNT
+if in .lt. 1 set in ?NSEL ! CHECK FOR ZERO, CHANGE TO MAX VALUE
+define targ sele list .subset. @IN end ! PICK WATER VIA RANDOM INDEX
+coor stat sele targ end ! GET OH2 ATOM COORDS, ASSIGN TO CHLORIDE
+coor set xdir ?XAVE ydir ?YAVE zdir ?ZAVE sele atom CL @K CLA end
+delete atom sele .byres. targ end sort ! REMOVE THE WATER MOLECULE
+incr k by 1
+if k .le. @ICL goto ilp
+
+label genk
+! INITIALIZE SODIUMS, REPEAT ABOVE PROCESS
+read sequ sod @INA
+generate na noang nodihe first none last none
+coor set xdir 0.0 ydir 0.0 zdir 0.0 sele segid na end
+if ina .le. 0 goto gg
+! NOTE THAT BOTH SEGID CL AND SEGID NA ARE 'EXCLUDED'
+! NEARBY WATERS ARE REALLY EXCLUDED; REPLACE ONLY 'BULK' WATERS
+set k 1
+label klp
+define xcld sele ( @SOL ) .or. segid CL .or. segid NA end
+define prox sele xcld .around. @MND end
+define list sele segid SOLV .and. .not. prox end
+calc in int( ?RAND * ?NSEL )
+if in .lt. 1 set in ?NSEL
+define targ sele list .subset. @IN end
+coor stat sele targ end
+coor set xdir ?XAVE ydir ?YAVE zdir ?ZAVE sele atom NA @K SOD end
+delete atom sele .byres. targ end sort
+incr k by 1
+if k .le. @INA goto klp
+
+label gg
+return

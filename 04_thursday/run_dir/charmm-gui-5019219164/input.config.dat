@@ -1,0 +1,1 @@
+{"systype":"solution","dimensions":["71","71","71","90.0","90.0","90.0"],"input":["amber"],"forcefield":{"type":"c36m","files":["default"],"custom":["fol\/fol.rtf","fol\/fol.prm","nap\/nap.rtf","nap\/nap.prm","hetb\/lig.rtf","hetb\/lig.prm","hetd\/lig.rtf","hetd\/lig.prm"]},"hmr":false}
