@@ -41,7 +41,7 @@ win=$1 #CHANGE HERE IF COUNTINUING STARTING WINDOW
 winmax=${win} #UNCOMMENT IF RUNNING ONLY ONE WINDOW 
 icnt=2  #CHANGE HERE IF COUNTINUING A RUN AT SPECIFIC COUNTER (CHUNK) IN ${win}
 cntmax=2 #MAXIMUM NUMBER OF CHUNKS PER WINDOW
-nstepp=500 # Number of MD steps per chunk
+nstepp=200 # Number of MD steps per chunk
 
 
 for ((i=$win;i<=$winmax;i++)); do
