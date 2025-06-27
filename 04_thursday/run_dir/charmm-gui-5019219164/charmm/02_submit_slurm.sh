@@ -4,7 +4,7 @@ mkdir -p logs
 #SBATCH --job-name=02_UMB_CHARMM_MNDO97_SQM_BATCH
 #SBATCH --partition=RM-shared
 #SBATCH --ntasks=1
-#SBATCH --time=00:30:00
+#SBATCH --time=00:15:00
 #SBATCH --account=see220002p
 #SBATCH --output=logs/%x_%j.out      # Main job log: logs/sqm_batch_<jobID>.out
 #SBATCH --error=logs/%x_%j.err       # Error log: logs/sqm_batch_<jobID>.err
